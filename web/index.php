@@ -27,8 +27,11 @@ print "hello world";
 //var myvar = 5;
 $myvar = 5;
 
-print $_GET['var'];
-
+if($_GET['var'] == 5) {
+	print ". Okay";
+}else {
+	print ". Nope";
+}	
 ?>
         </div>
     </body> 
