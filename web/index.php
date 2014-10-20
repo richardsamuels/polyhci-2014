@@ -23,6 +23,12 @@ p.notunique {
         <div id="unique">
 <?php 
 print "hello world";
+
+//var myvar = 5;
+$myvar = 5;
+
+print $_GET['var'];
+
 ?>
         </div>
     </body> 
