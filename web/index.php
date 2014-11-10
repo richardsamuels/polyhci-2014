@@ -4,12 +4,13 @@ $db = pg_connect(getenv('DATABASE_URL'))
     or die('Could not connect: ' . pg_last_error());
 
 // Performing SQL query
-$query = 'SELECT * FROM authors';
+$query = 'SELECT * FROM people';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // Printing results in HTML
 echo "<table>\n";
 while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+	var_dump($line);
     echo "\t<tr>\n";
     foreach ($line as $col_value) {
         echo "\t\t<td>$col_value</td>\n";

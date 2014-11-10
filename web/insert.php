@@ -3,10 +3,9 @@
 $db = pg_connect(getenv('DATABASE_URL'))
     or die('Could not connect: ' . pg_last_error());
 
-// Yes this is a terrible idea for production code. 
-//Why this is bad falls out of scope of this course,
-
-$query = 'INSERT INTO authors ("fname", "lname") VALUES (\'' . $_POST['f'] . '\', \'' . $_POST['l'] . '\')';
+// This is, without exaggeration, the worst possible way to do this for production code.
+//
+$query = 'INSERT INTO people ("fname", "lname") VALUES (\'' . $_POST['f'] . '\', \'' . $_POST['l'] . '\')';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 echo "Inserted";
