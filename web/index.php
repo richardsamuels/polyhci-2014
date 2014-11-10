@@ -1,7 +1,6 @@
 <?php
 // Connecting, selecting database
-//$dbconn = pg_connect("host=localhost dbname=publishing user=www password=foo")
-$dbconn = pg_connect(getenv('DATABASE_URL'))
+$db = pg_connect(getenv('DATABASE_URL'))
     or die('Could not connect: ' . pg_last_error());
 
 // Performing SQL query
@@ -21,7 +20,15 @@ echo "</table>\n";
 
 // Free resultset
 pg_free_result($result);
+?>
+<form action="insert.php" method="POST">
+<input name="f" type="text" />
+<input name="l" type="text" />
+
+<input type="submit" value="insert" />
+</form>
+<?php
 
 // Closing connection
-pg_close($dbconn);
+pg_close($db);
 ?>
