@@ -1,4 +1,5 @@
 <?php
+//Derived from the official PHP manual's sample code.
 // Connecting, selecting database
 $db = pg_connect(getenv('DATABASE_URL'))
     or die('Could not connect: ' . pg_last_error());
